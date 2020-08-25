@@ -1,0 +1,14 @@
+Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bpe=None, cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=1000, lr_scheduler='fixed', memory_efficient_fp16=False, min_loss_scale=0.0001, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer='nag', padding_factor=8, seed=1, source_lang='src', srcdict=None, target_lang='dst', task='translation', tensorboard_logdir='', testpref='/private/home/rchaabouni/one-example/release/translation/translation_count/joined_dict/test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, trainpref='/private/home/rchaabouni/one-example/release/translation/translation_count/joined_dict/train', user_dir=None, validpref='/private/home/rchaabouni/one-example/release/translation/translation_count/joined_dict/valid', workers=20)
+[src] Dictionary: 8847 types
+[src] /private/home/rchaabouni/one-example/release/translation/translation_count/joined_dict/train.src: 160240 sents, 4035632 tokens, 0.0% replaced by <unk>
+[src] Dictionary: 8847 types
+[src] /private/home/rchaabouni/one-example/release/translation/translation_count/joined_dict/valid.src: 7304 sents, 183453 tokens, 0.0191% replaced by <unk>
+[src] Dictionary: 8847 types
+[src] /private/home/rchaabouni/one-example/release/translation/translation_count/joined_dict/test.src: 6771 sents, 162699 tokens, 0.0633% replaced by <unk>
+[dst] Dictionary: 6631 types
+[dst] /private/home/rchaabouni/one-example/release/translation/translation_count/joined_dict/train.dst: 160240 sents, 3949155 tokens, 0.0% replaced by <unk>
+[dst] Dictionary: 6631 types
+[dst] /private/home/rchaabouni/one-example/release/translation/translation_count/joined_dict/valid.dst: 7304 sents, 178643 tokens, 0.00448% replaced by <unk>
+[dst] Dictionary: 6631 types
+[dst] /private/home/rchaabouni/one-example/release/translation/translation_count/joined_dict/test.dst: 6771 sents, 156949 tokens, 0.00892% replaced by <unk>
+Wrote preprocessed data to data-bin

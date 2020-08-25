@@ -1,0 +1,28 @@
+Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bpe=None, cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='./40/count//data-bin/', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=1000, lr_scheduler='fixed', memory_efficient_fp16=False, min_loss_scale=0.0001, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer='nag', padding_factor=8, seed=1, source_lang='src', srcdict=None, target_lang='dst', task='translation', tensorboard_logdir='', testpref='40/count//data//test', tgtdict=None, threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, trainpref='40/count//data//train', user_dir=None, validpref='40/count//data//valid', workers=1)
+[src] Dictionary: 7 types
+[src] 40/count//data//train.src: 21 sents, 861 tokens, 0.0% replaced by <unk>
+[src] Dictionary: 7 types
+[src] 40/count//data//valid.src: 41 sents, 1681 tokens, 0.0% replaced by <unk>
+[src] Dictionary: 7 types
+[src] 40/count//data//test.src: 41 sents, 1681 tokens, 0.0% replaced by <unk>
+[dst] Dictionary: 7 types
+[dst] 40/count//data//train.dst: 21 sents, 861 tokens, 0.0% replaced by <unk>
+[dst] Dictionary: 7 types
+[dst] 40/count//data//valid.dst: 41 sents, 41 tokens, 0.0% replaced by <unk>
+[dst] Dictionary: 7 types
+[dst] 40/count//data//test.dst: 41 sents, 41 tokens, 0.0% replaced by <unk>
+Wrote preprocessed data to ./40/count//data-bin/
+Namespace(align_suffix=None, alignfile=None, all_gather_list_size=16384, bpe=None, cpu=False, criterion='cross_entropy', dataset_impl='mmap', destdir='data-bin/', empty_cache_freq=0, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, joined_dictionary=False, log_format=None, log_interval=1000, lr_scheduler='fixed', memory_efficient_fp16=False, min_loss_scale=0.0001, no_progress_bar=False, nwordssrc=-1, nwordstgt=-1, only_source=False, optimizer='nag', padding_factor=8, seed=1, source_lang='src', srcdict='/private/home/rchaabouni/one-example/release/translation/translation_count/joined_dict/data-bin/dict.src.txt', target_lang='dst', task='translation', tensorboard_logdir='', testpref='./data/test', tgtdict='/private/home/rchaabouni/one-example/release/translation/translation_count/joined_dict/data-bin/dict.dst.txt', threshold_loss_scale=None, thresholdsrc=0, thresholdtgt=0, tokenizer=None, trainpref='./data/train', user_dir=None, validpref='./data/valid', workers=20)
+[src] Dictionary: 8847 types
+[src] ./data/train.src: 21 sents, 861 tokens, 0.0% replaced by <unk>
+[src] Dictionary: 8847 types
+[src] ./data/valid.src: 41 sents, 1681 tokens, 0.0% replaced by <unk>
+[src] Dictionary: 8847 types
+[src] ./data/test.src: 41 sents, 1681 tokens, 0.0% replaced by <unk>
+[dst] Dictionary: 6631 types
+[dst] ./data/train.dst: 21 sents, 861 tokens, 0.0% replaced by <unk>
+[dst] Dictionary: 6631 types
+[dst] ./data/valid.dst: 41 sents, 41 tokens, 0.0% replaced by <unk>
+[dst] Dictionary: 6631 types
+[dst] ./data/test.dst: 41 sents, 41 tokens, 0.0% replaced by <unk>
+Wrote preprocessed data to data-bin/

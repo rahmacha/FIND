@@ -21,6 +21,10 @@ from fairseq.trainer import Trainer
 from fairseq.criterions import CRITERION_REGISTRY
 from fairseq.meters import AverageMeter
 
+from shutil import copyfile
+
+from generate import cli_main as generate_main
+
 def get_training_stats(trainer):
     stats = collections.OrderedDict()
     stats['loss'] = trainer.get_meter('train_loss')
@@ -63,7 +67,11 @@ def main(args, init_distributed=False):
     # Build trainer
     trainer = Trainer(args, task, model, criterion)
     initial_state_checkpoint = str(pathlib.Path(args.save_dir) / 'initial.pt')
-    trainer.save_checkpoint(initial_state_checkpoint, {'epoch': 0})
+
+    if args.restore_file == 'checkpoint_last.pt':
+        trainer.save_checkpoint(initial_state_checkpoint, {'epoch': 0})
+    else:
+        copyfile(args.restore_file, initial_state_checkpoint)
 
     batches_per_epoch = args.mdl_batches_per_epoch
     batch_size = args.mdl_batch_size
@@ -86,7 +94,7 @@ def main(args, init_distributed=False):
 
     for step in range(steps):
         trainer.load_checkpoint(initial_state_checkpoint, reset_optimizer=True, reset_lr_scheduler=True)
-
+        
         epoch_itr = trainer.get_train_iterator(epoch=step, load_dataset=False)
 
         allowed_examples += blocks[step]
@@ -128,7 +136,6 @@ def main(args, init_distributed=False):
     
     state_checkpoint = str(pathlib.Path(args.save_dir) / 'last.pt')
     trainer.save_checkpoint(state_checkpoint, {'epoch': step})
-
 
 def train(args, trainer, task, epoch_itr):
     """Train the model for one epoch."""
@@ -232,5 +239,11 @@ def cli_main(args):
     args.distributed_world_size = 1
     main(args)
 
+    return args
+
 if __name__ == '__main__':
-    cli_main(sys.argv[1:])
+    params = cli_main(sys.argv[1:])
+
+    generate_params = [sys.argv[1], "--path=" + str(pathlib.Path(params.save_dir) / '0.pt'), '--beam=1', 
+                '--batch-size=128', '--gen-subset=test']
+    generate_main(generate_params)
